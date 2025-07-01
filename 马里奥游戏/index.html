@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超级马里奥游戏 - 增强版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>超级马里奥 - 增强版</h1>
+            <div class="game-info">
+                <span>分数: <span id="score">0</span></span>
+                <span>生命: <span id="lives">3</span></span>
+                <span>关卡: <span id="level">1</span></span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        
+        <div class="controls">
+            <p>控制说明:</p>
+            <ul>
+                <li>← → 键: 左右移动</li>
+                <li>空格键: 跳跃</li>
+                <li>P键: 暂停/继续游戏</li>
+                <li>R键: 重新开始</li>
+            </ul>
+            <p>游戏特色:</p>
+            <ul>
+                <li>🎮 经典马里奥造型</li>
+                <li>🪙 旋转金币动画</li>
+                <li>🍄 蘑菇道具 - 变大</li>
+                <li>⭐ 星星道具 - 无敌</li>
+                <li>👾 多种敌人类型</li>
+                <li>🚀 移动平台</li>
+                <li>💥 粒子特效</li>
+            </ul>
+        </div>
+        
+        <div class="game-overlay" id="gameOverlay">
+            <div class="overlay-content">
+                <h2 id="overlayTitle">游戏开始</h2>
+                <p id="overlayMessage">按空格键开始游戏</p>
+                <button id="startButton">开始游戏</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html> 

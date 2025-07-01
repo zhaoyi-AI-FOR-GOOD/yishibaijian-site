@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥特曼 vs 怪兽 - 格斗游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>奥特曼 vs 怪兽</h1>
+            <div class="game-info">
+                <div class="round-info">第 <span id="round">1</span> 回合</div>
+                <div class="timer">时间: <span id="timer">99</span></div>
+            </div>
+        </div>
+        
+        <div class="game-screen">
+            <canvas id="gameCanvas" width="1200" height="600"></canvas>
+            
+            <!-- 玩家1 (奥特曼) 状态栏 -->
+            <div class="player-status player1-status">
+                <div class="player-name">奥特曼</div>
+                <div class="health-bar">
+                    <div class="health-fill" id="p1-health"></div>
+                    <span class="health-text" id="p1-health-text">100</span>
+                </div>
+                <div class="energy-bar">
+                    <div class="energy-fill" id="p1-energy"></div>
+                    <span class="energy-text" id="p1-energy-text">100</span>
+                </div>
+                <div class="shield-cooldown">
+                    <div class="shield-icon" id="p1-shield-icon">🛡️</div>
+                    <div class="cooldown-bar" id="p1-cooldown"></div>
+                </div>
+            </div>
+            
+            <!-- 玩家2 (怪兽) 状态栏 -->
+            <div class="player-status player2-status">
+                <div class="player-name">怪兽</div>
+                <div class="health-bar">
+                    <div class="health-fill" id="p2-health"></div>
+                    <span class="health-text" id="p2-health-text">100</span>
+                </div>
+                <div class="energy-bar">
+                    <div class="energy-fill" id="p2-energy"></div>
+                    <span class="energy-text" id="p2-energy-text">100</span>
+                </div>
+                <div class="shield-cooldown">
+                    <div class="shield-icon" id="p2-shield-icon">🛡️</div>
+                    <div class="cooldown-bar" id="p2-cooldown"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-section">
+                <h3>奥特曼控制 (玩家1)</h3>
+                <p>移动: Q/E | 跳跃: W | 轻拳: A | 重拳: S | 必杀技: D | 远程攻击: Z | 防护盾: X</p>
+            </div>
+            <div class="control-section">
+                <h3>怪兽控制 (玩家2)</h3>
+                <p>移动: U/O | 跳跃: I | 轻拳: J | 重拳: K | 必杀技: L | 远程攻击: M | 防护盾: N</p>
+            </div>
+        </div>
+        
+        <div class="game-overlay" id="gameOverlay" style="display: none;">
+            <div class="overlay-content">
+                <h2 id="winner-text">游戏结束</h2>
+                <button id="restart-btn">重新开始</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html> 
