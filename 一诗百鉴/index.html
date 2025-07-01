@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一诗百鉴 - 唐诗查询与赏析</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>一诗百鉴</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">首页</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 诗歌列表区域 -->
+        <section class="poems-list-section">
+            <div class="container">
+                <h2 class="section-title">唐诗精选</h2>
+                <p class="section-subtitle">精选50首经典唐诗，带您领略中华诗词之美</p>
+                
+                <!-- 筛选和搜索区域 -->
+                <div class="filter-section">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索诗名、作者或诗句..." class="search-input">
+                        <button type="button" id="searchBtn" class="search-btn">
+                            搜索
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="authorFilter">作者：</label>
+                            <select id="authorFilter" class="filter-select">
+                                <option value="">全部作者</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="categoryFilter">分类：</label>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="">全部分类</option>
+                                <option value="山水田园">山水田园</option>
+                                <option value="思乡怀远">思乡怀远</option>
+                                <option value="爱情婚姻">爱情婚姻</option>
+                                <option value="边塞征战">边塞征战</option>
+                                <option value="咏物抒怀">咏物抒怀</option>
+                                <option value="送别离情">送别离情</option>
+                                <option value="哲理人生">哲理人生</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="sortFilter">排序：</label>
+                            <select id="sortFilter" class="filter-select">
+                                <option value="title">按诗名</option>
+                                <option value="author">按作者</option>
+                                <option value="category">按分类</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 诗歌列表 -->
+                <div class="poems-grid" id="poemsList">
+                    <!-- 诗歌卡片将通过JavaScript动态生成 -->
+                </div>
+                
+                <!-- 分页控制 -->
+                <div class="pagination" id="pagination">
+                    <!-- 分页按钮将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 一诗百鉴</p>
+        </div>
+    </footer>
+
+    <script src="js/poems-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

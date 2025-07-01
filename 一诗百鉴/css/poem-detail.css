@@ -1,0 +1,462 @@
+/* 诗歌详情页面样式 */
+
+/* 面包屑导航 */
+.breadcrumb {
+    padding: 20px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #8B4513;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* 诗歌详情容器 */
+.poem-detail-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+/* 左侧诗歌主要内容 */
+.poem-main {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.poem-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.poem-title {
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.poem-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-name {
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.dynasty {
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* 诗歌内容 */
+.poem-content {
+    margin-bottom: 30px;
+}
+
+.poem-text {
+    text-align: center;
+}
+
+.poem-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.char {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.char:hover {
+    color: #8B4513;
+    transform: scale(1.1);
+}
+
+.pinyin {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poem-line:hover .pinyin {
+    opacity: 1;
+}
+
+
+
+/* 右侧边栏 */
+.poem-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.annotation-section,
+.background-section,
+.poet-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.annotation-section h3,
+.background-section h3,
+.poet-section h3 {
+    color: #8B4513;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* 注释列表 */
+.annotation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.annotation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.annotation-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.word {
+    font-weight: 600;
+    color: #8B4513;
+    font-size: 1.1rem;
+}
+
+.meaning {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 创作背景 */
+.background-section p {
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+/* 诗人信息 */
+.poet-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.poet-avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.poet-details h4 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.poet-details p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.poet-link {
+    color: #8B4513;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.poet-link:hover {
+    text-decoration: underline;
+}
+
+/* 赏析区域 */
+.analysis-section {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.analysis-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: white;
+}
+
+.tab-content {
+    min-height: 300px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.analysis-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #8B4513;
+}
+
+.analysis-item h4 {
+    color: #8B4513;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.analysis-item p {
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+/* 名家赏析样式 */
+.appreciation-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #f0f0f0;
+    color: #666;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: white;
+}
+
+.appreciation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.appreciation-item {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #8B4513;
+    transition: all 0.3s ease;
+}
+
+.appreciation-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.appreciation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.book-title {
+    color: #8B4513;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.appreciation-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.author {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.period {
+    background: #f0f0f0;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.appreciation-content {
+    line-height: 1.8;
+    color: #333;
+}
+
+.appreciation-content p {
+    margin: 0;
+    text-align: justify;
+}
+
+.no-appreciation {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px;
+}
+
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .poem-detail-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .poem-main {
+        padding: 25px;
+    }
+    
+    .poem-title {
+        font-size: 2rem;
+    }
+    
+    .char {
+        font-size: 1.5rem;
+        margin: 0 5px;
+    }
+    
+    .analysis-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        text-align: center;
+    }
+    
+    .appreciation-filter {
+        justify-content: center;
+    }
+    
+    .appreciation-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .appreciation-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .poem-header {
+        margin-bottom: 30px;
+    }
+    
+    .poem-title {
+        font-size: 1.8rem;
+    }
+    
+    .char {
+        font-size: 1.3rem;
+        margin: 0 3px;
+    }
+    
+    .annotation-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .poet-info {
+        flex-direction: column;
+        text-align: center;
+    }
+} 

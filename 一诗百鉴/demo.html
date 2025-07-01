@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一诗百鉴 - 功能演示</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .demo-section {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .demo-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .demo-title {
+            font-size: 1.3rem;
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .demo-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #8B4513;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>一诗百鉴</h1>
+                <span class="subtitle">唐诗查询与赏析</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="poem-detail.html" class="nav-link">诗歌详情</a></li>
+                <li><a href="demo.html" class="nav-link active">功能演示</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 演示介绍 -->
+        <section class="search-section">
+            <div class="search-container">
+                <h2 class="search-title">一诗百鉴功能演示</h2>
+                <p class="search-subtitle">体验现代化的唐诗查询与赏析平台</p>
+            </div>
+        </section>
+
+        <!-- 核心功能演示 -->
+        <section class="demo-section">
+            <div class="demo-container">
+                <h3 class="section-title">核心功能</h3>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <div class="demo-icon">🔍</div>
+                        <div class="demo-title">智能搜索</div>
+                        <div class="demo-desc">
+                            支持多种搜索方式，快速找到您想要的诗歌
+                        </div>
+                        <ul class="feature-list">
+                            <li>诗名搜索</li>
+                            <li>诗句搜索</li>
+                            <li>作者搜索</li>
+                            <li>模糊匹配</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-icon">📖</div>
+                        <div class="demo-title">诗歌详情</div>
+                        <div class="demo-desc">
+                            完整的诗歌信息，包含注释、背景和赏析
+                        </div>
+                        <ul class="feature-list">
+                            <li>原文展示</li>
+                            <li>拼音标注</li>
+                            <li>词汇注释</li>
+                            <li>创作背景</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-icon">🏷️</div>
+                        <div class="demo-title">分类浏览</div>
+                        <div class="demo-desc">
+                            按主题分类，轻松浏览相关诗歌
+                        </div>
+                        <ul class="feature-list">
+                            <li>山水田园</li>
+                            <li>思乡怀远</li>
+                            <li>爱情婚姻</li>
+                            <li>边塞征战</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计特色 -->
+        <section class="demo-section" style="background: #f8f9fa;">
+            <div class="demo-container">
+                <h3 class="section-title">设计特色</h3>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <div class="demo-icon">📱</div>
+                        <div class="demo-title">响应式设计</div>
+                        <div class="demo-desc">
+                            完美适配各种设备，提供一致的用户体验
+                        </div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-icon">🎨</div>
+                        <div class="demo-title">古典美学</div>
+                        <div class="demo-desc">
+                            融入中国传统文化元素，体现古典韵味
+                        </div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-icon">⚡</div>
+                        <div class="demo-title">流畅交互</div>
+                        <div class="demo-desc">
+                            优雅的动画效果，提升用户体验
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术特色 -->
+        <section class="demo-section">
+            <div class="demo-container">
+                <h3 class="section-title">技术特色</h3>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <div class="demo-icon">🚀</div>
+                        <div class="demo-title">原生技术</div>
+                        <div class="demo-desc">
+                            使用原生HTML、CSS、JavaScript开发，无框架依赖
+                        </div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-icon">📊</div>
+                        <div class="demo-title">模拟数据</div>
+                        <div class="demo-desc">
+                            包含9首经典唐诗的完整数据，展示核心功能
+                        </div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-icon">🔧</div>
+                        <div class="demo-title">易于扩展</div>
+                        <div class="demo-desc">
+                            模块化设计，便于添加新功能和内容
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 调用行动 -->
+        <section class="cta-section">
+            <div class="container">
+                <h3 style="font-size: 2rem; margin-bottom: 20px;">开始体验一诗百鉴</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
+                    探索唐诗之美，感受古典文化的魅力
+                </p>
+                <a href="index.html" class="cta-btn">进入首页</a>
+                <a href="poem-detail.html" class="cta-btn">查看诗歌详情</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 一诗百鉴. 传承中华诗词文化，弘扬古典文学之美.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 添加一些演示效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为演示卡片添加点击效果
+            const demoCards = document.querySelectorAll('.demo-card');
+            demoCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-5px)';
+                    }, 150);
+                });
+            });
+            
+            // 添加滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有演示卡片
+            demoCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html> 

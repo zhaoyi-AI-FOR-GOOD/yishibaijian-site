@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静夜思 - 一诗百鉴</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/poem-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>一诗百鉴</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a> > 
+                <a href="#" onclick="history.back()">搜索结果</a> > 
+                <span>静夜思</span>
+            </div>
+
+            <!-- 诗歌详情 -->
+            <div class="poem-detail-container">
+                <!-- 左侧：诗歌原文 -->
+                <div class="poem-main">
+                    <div class="poem-header">
+                        <h1 class="poem-title">静夜思</h1>
+                        <div class="poem-author">
+                            <span class="author-name">李白</span>
+                            <span class="dynasty">唐</span>
+                        </div>
+                    </div>
+                    
+                    <div class="poem-content">
+                        <div class="poem-text">
+                            <div class="poem-line">
+                                <span class="char">床</span>
+                                <span class="char">前</span>
+                                <span class="char">明</span>
+                                <span class="char">月</span>
+                                <span class="char">光</span>
+                                <span class="pinyin">chuáng qián míng yuè guāng</span>
+                            </div>
+                            <div class="poem-line">
+                                <span class="char">疑</span>
+                                <span class="char">是</span>
+                                <span class="char">地</span>
+                                <span class="char">上</span>
+                                <span class="char">霜</span>
+                                <span class="pinyin">yí shì dì shàng shuāng</span>
+                            </div>
+                            <div class="poem-line">
+                                <span class="char">举</span>
+                                <span class="char">头</span>
+                                <span class="char">望</span>
+                                <span class="char">明</span>
+                                <span class="char">月</span>
+                                <span class="pinyin">jǔ tóu wàng míng yuè</span>
+                            </div>
+                            <div class="poem-line">
+                                <span class="char">低</span>
+                                <span class="char">头</span>
+                                <span class="char">思</span>
+                                <span class="char">故</span>
+                                <span class="char">乡</span>
+                                <span class="pinyin">dī tóu sī gù xiāng</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- 右侧：注释和背景 -->
+                <div class="poem-sidebar">
+                    <!-- 词汇注释 -->
+                    <div class="annotation-section">
+                        <h3>词汇注释</h3>
+                        <div class="annotation-list">
+                            <div class="annotation-item">
+                                <span class="word">疑</span>
+                                <span class="meaning">怀疑，以为</span>
+                            </div>
+                            <div class="annotation-item">
+                                <span class="word">举头</span>
+                                <span class="meaning">抬头</span>
+                            </div>
+                            <div class="annotation-item">
+                                <span class="word">低头</span>
+                                <span class="meaning">低下头</span>
+                            </div>
+                            <div class="annotation-item">
+                                <span class="word">思</span>
+                                <span class="meaning">思念，想念</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 创作背景 -->
+                    <div class="background-section">
+                        <h3>创作背景</h3>
+                        <p>这首诗创作于唐玄宗开元年间，李白在扬州旅居时所作。当时诗人远离家乡，在一个月明之夜，看到床前的月光，触景生情，写下了这首思乡之作。</p>
+                    </div>
+
+                    <!-- 诗人简介 -->
+                    <div class="poet-section">
+                        <h3>诗人简介</h3>
+                        <div class="poet-info">
+                            <div class="poet-avatar">李</div>
+                            <div class="poet-details">
+                                <h4>李白</h4>
+                                <p>唐代伟大的浪漫主义诗人，被后人誉为"诗仙"。字太白，号青莲居士。</p>
+                                <a href="#" class="poet-link">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 赏析内容 -->
+            <div class="analysis-section">
+                <div class="analysis-tabs">
+                    <button class="tab-btn active" data-tab="appreciation">一诗百鉴</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- 一诗百鉴 -->
+                    <div class="tab-pane active" id="appreciation">
+                        <div class="appreciation-filter">
+                            <button class="filter-btn active" data-period="all">全部</button>
+                            <button class="filter-btn" data-period="唐代">唐代</button>
+                            <button class="filter-btn" data-period="宋代">宋代</button>
+                            <button class="filter-btn" data-period="明代">明代</button>
+                            <button class="filter-btn" data-period="清代">清代</button>
+                            <button class="filter-btn" data-period="现代">现代</button>
+                        </div>
+                        <div class="appreciation-list" id="appreciationList">
+                            <!-- 赏析内容将通过JavaScript动态加载 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 一诗百鉴</p>
+        </div>
+    </footer>
+
+    <script src="js/poems-data.js"></script>
+    <script src="js/poem-detail.js"></script>
+</body>
+</html> 

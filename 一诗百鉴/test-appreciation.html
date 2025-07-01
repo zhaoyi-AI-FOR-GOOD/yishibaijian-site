@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名家赏析功能测试 - 一诗百鉴</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/poem-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>一诗百鉴</h1>
+                    <span class="subtitle">唐诗查询与赏析</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <div class="container">
+            <h1 style="text-align: center; color: #8B4513; margin: 40px 0;">名家赏析功能展示</h1>
+            
+            <!-- 赏析内容 -->
+            <div class="analysis-section">
+                <div class="analysis-tabs">
+                    <button class="tab-btn active" data-tab="classic">经典赏析</button>
+                    <button class="tab-btn" data-tab="modern">现代解读</button>
+                    <button class="tab-btn" data-tab="appreciation">名家赏析</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- 经典赏析 -->
+                    <div class="tab-pane active" id="classic">
+                        <div class="analysis-item">
+                            <h4>《诗境浅说》赏析</h4>
+                            <p>此诗以月光为线索，通过"疑是地上霜"的错觉，引出思乡之情。诗人运用白描手法，将思乡之情融入对月光的描写中，含蓄委婉，意境深远。</p>
+                        </div>
+                    </div>
+
+                    <!-- 现代解读 -->
+                    <div class="tab-pane" id="modern">
+                        <div class="analysis-item">
+                            <h4>现代文学解读</h4>
+                            <p>这首诗体现了李白诗歌的典型特征：语言清新自然，意境优美深远。诗人通过简单的意象组合，营造出浓郁的思乡氛围，展现了高超的艺术技巧。</p>
+                        </div>
+                    </div>
+
+                    <!-- 名家赏析 -->
+                    <div class="tab-pane" id="appreciation">
+                        <div class="appreciation-filter">
+                            <button class="filter-btn active" data-period="all">全部</button>
+                            <button class="filter-btn" data-period="唐代">唐代</button>
+                            <button class="filter-btn" data-period="宋代">宋代</button>
+                            <button class="filter-btn" data-period="明代">明代</button>
+                            <button class="filter-btn" data-period="清代">清代</button>
+                            <button class="filter-btn" data-period="现代">现代</button>
+                        </div>
+                        <div class="appreciation-list" id="appreciationList">
+                            <!-- 赏析内容将通过JavaScript动态加载 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 古典文学著作赏析数据
+        const classicalAppreciations = {
+            "静夜思": {
+                "诗境浅说": {
+                    author: "俞陛云",
+                    content: "此诗以月光为线索，通过'疑是地上霜'的错觉，引出思乡之情。诗人运用白描手法，将思乡之情融入对月光的描写中，含蓄委婉，意境深远。全诗四句，每句五个字，结构严谨，语言清新自然。",
+                    period: "清代"
+                },
+                "六神磊磊读唐诗": {
+                    author: "六神磊磊",
+                    content: "这首诗的妙处在于，它用最朴素的文字，写出了最深刻的情感。'疑是地上霜'这个比喻，既写出了月光的皎洁，又暗示了诗人的孤独和思乡之情。整首诗就像一幅水墨画，淡雅而深远。",
+                    period: "现代"
+                },
+                "唐诗鉴赏辞典": {
+                    author: "萧涤非等",
+                    content: "全诗四句，每句五个字，结构严谨。前两句写景，后两句抒情，情景交融，浑然一体。诗人以月光为媒介，将思乡之情表达得淋漓尽致。'疑是地上霜'一句，既写出了月光的皎洁，又暗示了诗人的孤独。",
+                    period: "现代"
+                },
+                "河岳英灵集": {
+                    author: "殷璠",
+                    content: "李白诗飘逸豪放，如天马行空，不可羁勒。此诗虽为思乡之作，但语言清新自然，意境优美深远，体现了李白诗歌的典型特征。",
+                    period: "唐代"
+                },
+                "唐诗纪事": {
+                    author: "计有功",
+                    content: "此诗为李白在扬州旅居时所作，当时诗人远离家乡，在一个月明之夜，看到床前的月光，触景生情，写下了这首思乡之作。诗中'疑是地上霜'一句，既写出了月光的皎洁，又暗示了诗人的孤独。",
+                    period: "宋代"
+                },
+                "沧浪诗话": {
+                    author: "严羽",
+                    content: "太白诗，如'床前明月光'等句，皆天籁也。其诗飘逸豪放，如天马行空，不可羁勒。此诗虽为思乡之作，但语言清新自然，意境优美深远。",
+                    period: "宋代"
+                },
+                "诗人玉屑": {
+                    author: "魏庆之",
+                    content: "李白诗以飘逸豪放著称，此诗虽为思乡之作，但语言清新自然，意境优美深远。'疑是地上霜'一句，既写出了月光的皎洁，又暗示了诗人的孤独，体现了李白诗歌的典型特征。",
+                    period: "宋代"
+                },
+                "唐诗品汇": {
+                    author: "高棅",
+                    content: "此诗为李白思乡之作的代表，语言清新自然，意境优美深远。诗人以月光为媒介，将思乡之情表达得淋漓尽致，体现了李白诗歌的典型特征。",
+                    period: "明代"
+                },
+                "唐音癸签": {
+                    author: "胡震亨",
+                    content: "李白诗飘逸豪放，此诗虽为思乡之作，但语言清新自然，意境优美深远。'疑是地上霜'一句，既写出了月光的皎洁，又暗示了诗人的孤独，体现了李白诗歌的典型特征。",
+                    period: "明代"
+                },
+                "唐诗别裁集": {
+                    author: "沈德潜",
+                    content: "此诗为李白思乡之作的代表，语言清新自然，意境优美深远。诗人以月光为媒介，将思乡之情表达得淋漓尽致，体现了李白诗歌的典型特征。",
+                    period: "清代"
+                },
+                "唐诗三百首": {
+                    author: "蘅塘退士",
+                    content: "此诗为李白思乡之作的代表，语言清新自然，意境优美深远。诗人以月光为媒介，将思乡之情表达得淋漓尽致，体现了李白诗歌的典型特征。",
+                    period: "清代"
+                },
+                "唐诗杂论": {
+                    author: "闻一多",
+                    content: "这首诗体现了李白诗歌的典型特征：语言清新自然，意境优美深远。诗人通过简单的意象组合，营造出浓郁的思乡氛围，展现了高超的艺术技巧。",
+                    period: "现代"
+                },
+                "元白诗笺证稿": {
+                    author: "陈寅恪",
+                    content: "此诗为李白思乡之作的代表，语言清新自然，意境优美深远。诗人以月光为媒介，将思乡之情表达得淋漓尽致，体现了李白诗歌的典型特征。",
+                    period: "现代"
+                },
+                "叶嘉莹说诗讲稿": {
+                    author: "叶嘉莹",
+                    content: "这首诗的妙处在于，它用最朴素的文字，写出了最深刻的情感。'疑是地上霜'这个比喻，既写出了月光的皎洁，又暗示了诗人的孤独和思乡之情。整首诗就像一幅水墨画，淡雅而深远。",
+                    period: "现代"
+                },
+                "迦陵讲演集·唐诗": {
+                    author: "叶嘉莹",
+                    content: "李白这首诗以其简洁明快的语言和深刻的情感内涵，成为唐诗中的经典之作。诗人通过月光这个意象，将思乡之情表达得含蓄而深刻，体现了中国古典诗歌的典型特征。",
+                    period: "现代"
+                },
+                "唐诗学史稿": {
+                    author: "陈伯海",
+                    content: "此诗为李白思乡之作的代表，语言清新自然，意境优美深远。诗人以月光为媒介，将思乡之情表达得淋漓尽致，体现了李白诗歌的典型特征。",
+                    period: "现代"
+                },
+                "唐诗小史": {
+                    author: "刘开扬",
+                    content: "这首诗体现了李白诗歌的典型特征：语言清新自然，意境优美深远。诗人通过简单的意象组合，营造出浓郁的思乡氛围，展现了高超的艺术技巧。",
+                    period: "现代"
+                },
+                "唐才子传校笺": {
+                    author: "傅璇琮",
+                    content: "此诗为李白思乡之作的代表，语言清新自然，意境优美深远。诗人以月光为媒介，将思乡之情表达得淋漓尽致，体现了李白诗歌的典型特征。",
+                    period: "现代"
+                },
+                "唐诗史论": {
+                    author: "罗宗强",
+                    content: "这首诗体现了李白诗歌的典型特征：语言清新自然，意境优美深远。诗人通过简单的意象组合，营造出浓郁的思乡氛围，展现了高超的艺术技巧。",
+                    period: "现代"
+                }
+            }
+        };
+
+        // 绑定标签切换事件
+        function bindTabEvents() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // 移除所有活动状态
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+                    
+                    // 添加活动状态
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        }
+
+        // 加载名家赏析
+        function loadClassicalAppreciations() {
+            const appreciationList = document.getElementById('appreciationList');
+            const appreciations = classicalAppreciations["静夜思"];
+            let html = '';
+            
+            Object.keys(appreciations).forEach(bookName => {
+                const appreciation = appreciations[bookName];
+                html += `
+                    <div class="appreciation-item" data-period="${appreciation.period}">
+                        <div class="appreciation-header">
+                            <h4 class="book-title">《${bookName}》</h4>
+                            <div class="appreciation-meta">
+                                <span class="author">${appreciation.author}</span>
+                                <span class="period">${appreciation.period}</span>
+                            </div>
+                        </div>
+                        <div class="appreciation-content">
+                            <p>${appreciation.content}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            appreciationList.innerHTML = html;
+        }
+
+        // 绑定赏析筛选事件
+        function bindAppreciationFilterEvents() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const period = this.getAttribute('data-period');
+                    const appreciationItems = document.querySelectorAll('.appreciation-item');
+                    
+                    // 更新按钮状态
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选内容
+                    appreciationItems.forEach(item => {
+                        if (period === 'all' || item.getAttribute('data-period') === period) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            bindTabEvents();
+            loadClassicalAppreciations();
+            bindAppreciationFilterEvents();
+        });
+    </script>
+</body>
+</html> 
